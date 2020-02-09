@@ -1,0 +1,23 @@
+<app-counter></app-counter>
+
+
+<app-pipe></app-pipe>
+
+
+
+<div style="text-align: center;">
+  <h1>
+    To-do com angular
+  </h1>
+
+  <input [(ngModel)]="tarefa" type="text">
+
+  <button (click)="adicionar()" >Adicionar</button>
+
+  <ul>
+    <li *ngFor="let tarefa of tarefas">{{tarefa}}</li>
+  </ul>
+
+
+</div>
+
