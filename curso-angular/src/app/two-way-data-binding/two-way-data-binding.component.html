@@ -1,0 +1,25 @@
+<section>
+    <article>
+        <h3>two-way-data-binding</h3>
+
+        <div>
+            <input type="text" [nome]="nome" (input)="nome = $event.target.value">
+
+
+            <input  type="text" [(ngModel)]="name" />
+
+            <input  type="text" [(ngModel)]="pessoa.nome" />
+            <input  type="text" [(ngModel)]="pessoa.idade" />
+
+            <p>Voce digitou: {{ nome }}</p>
+            <p>Voce digitou: {{ name }}</p>
+            <p>Voce digitou: {{ pessoa.nome }}</p>
+            <p>Voce digitou: {{ pessoa.idade }}</p>
+
+        </div>
+
+        <app-input-property [nome]="nomeDoCurso" ></app-input-property>
+
+        <app-output-property valor="10" (modouValor)="onMudouValor($event)" ></app-output-property>
+    </article>
+</section>

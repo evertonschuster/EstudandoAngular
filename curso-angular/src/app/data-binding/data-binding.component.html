@@ -1,0 +1,56 @@
+<section class="property-binding">
+    <article>
+        <h3>Interpolation / Interpolação</h3>
+
+        <p>String renderizada com interpolação: {{ url }}</p>
+        <p>Resultado da 1 + 1 é: {{ 1 + 1 }}</p>
+        <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+
+        <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtitCurso() }}</p>
+    </article>
+
+    <article>
+        <h3>Property Binding</h3>
+        <img src="{{ urlImagem }}">
+        <img [src]="urlImagem">
+    </article>
+
+    <article>
+        <h3>Class e Style binding</h3>
+
+        <div>
+            Selecione uma classe:
+            <select #classe (change)="0">
+                <option value="alert-success">alert-success</option>
+                <option value="alert-danger">alert-danger</option>
+                <option value="alert-warning">alert-warning</option>
+                <option value="alert-info">alert-info</option>
+            </select>
+            <br><br>
+
+ 
+            <div class="alert" [class.alert-success]="classe.value == 'alert-success'" role="alert">
+                A simple success alert—check it out!
+            </div>
+            <div class="alert" [class.alert-danger]="classe.value == 'alert-danger'" role="alert">
+                A simple danger alert—check it out!
+            </div>
+            <div class="alert" [class.alert-warning]="classe.value == 'alert-warning'" role="alert">
+                A simple warning alert—check it out!
+            </div>
+            <div class="alert" [class.alert-info]="classe.value == 'alert-info'" role="alert">
+                A simple info alert—check it out!
+            </div>
+
+            <div class="alert {{ classe.value }}" role="alert">
+                A simple alert—check it out!
+            </div>
+            
+            <div class="alert alert-info" role="alert" [style.display]="classe.value == 'alert-info' ? 'block' : 'none'">
+                A simple info alert—check it out!
+            </div>
+
+        </div>
+    </article>
+
+</section>
